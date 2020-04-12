@@ -1,0 +1,73 @@
+# SETUP
+baseurl = "/"
+publishdir = "public"
+DefaultContentLanguage = "en"
+canonifyUrls = "true"
+googleAnalytics = ""
+disableKinds = ["RSS","taxonomy","taxonomyTerm"] #remove this if needed
+summaryLength = 40
+
+[outputs]
+    home = ["HTML","RSS"]
+    section  = ["HTML"]
+
+[outputFormats]
+    [outputFormats.RSS]
+        mediatype = "application/rss"
+        baseName = "feed"
+
+# for RSS feed
+[author]
+    name = "AUTHOR"
+    email = "EMAIL"
+
+[params]
+    title = "TITLE"
+    description = "DESCRIPTION"
+    showReadTime = 1
+    images = ["/img/IMAGE"]
+
+    # SOCIAL NETWORKS
+
+    [[params.social]]
+        title = "TITLE"
+        icon = "ICON"
+        url = "URL"
+        weight = 1
+# BLOG
+paginate = 8
+paginatePath = "page"
+
+[taxonomies]
+    tag = "tags"
+
+[permalinks]
+    blog = "blog/:title/"
+
+[related]
+    threshold = 80
+    includeNewer = "true"
+    toLower = "false"
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+    [[related.indices]]
+        name = "date"
+        weight = 20
+
+## IF NEEDED
+
+[params.pagination] # for Bootstrap 4
+    # These are all optional and default to true
+    class = "justify-content-center mt-3 mb-4"      # Add classes to the nav element
+    showBeginEnd = false       # If false it will hide the First/Previous/Next/Last if it evaluates to false
+    # showFirst = true          # If false it will hide the First page nav button
+    firstIndicator = "<i class='fas fa-long-arrow-alt-left'></i>"       # Change the default indicator to something else, like "First" or an icon wrapped in an i element
+    # showPrevious = true       # If false it will hide the previous button
+    previousIndicator = "<i class='fas fa-chevron-left'></i>"    # Change the default indicator to something else, like "Previous" or an icon wrapped in an i element
+    # showNext = true           # True by default - Only "false" will hide the next button
+    nextIndicator = "<i class='fas fa-chevron-right'></i>"        # Change the default indicator to something else, like "Next" or an icon wrapped in an i element
+    # showLast = true
+    lastIndicator = "<i class='fas fa-long-arrow-alt-right'></i>"
+    # showPageNumbers = true    # If false it will hide the numbering of pages
+    # pagesBetweenActive = 2    # How many page numbers to show between the active page - it defaults to 3

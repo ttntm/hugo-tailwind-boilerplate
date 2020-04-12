@@ -1,0 +1,23 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="{{ .Site.BaseURL}}css/page.css" as="style">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="robots" content="index,follow">
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    <title>{{ if .IsHome }}Home | {{ .Site.Author.name }}{{ else }}{{ .Title }} | {{ .Site.Author.name }}{{ end }}</title>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{{ .Site.BaseURL}}css/page.css">
+</head>
+<body class="text-navy flex flex-col font-sans">
+    <main class="w-full min-h-screen flex flex-col items-center justify-center lg:w-3/4 xl:w-2/3 px-3 py-12 mx-auto">
+        <div class="w-full self-center text-center">
+            <h1 class="font-bold text-2xl">Demo Page</h1>
+            <h2 class="text-xl my-4">hugo-tailwind-boilerplate demo page</h2>
+            <a href="https://github.com/ttntm/hugo-tailwind-boilerplate" class="text-lg underline hover:no-underline text-blue-600">View on GitHub</a>
+        </div>
+    </main>
+</body>

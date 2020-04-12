@@ -1,0 +1,27 @@
+{
+  "name": "hugo-tailwind-boilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A boilerplate for a Hugo site based on TailwindCSS",
+  "scripts": {
+    "start": "gulp dev && hugo server",
+    "deploy": "gulp build && hugo --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttntm/hugo-tailwind-boilerplate.git"
+  },
+  "author": "ttntm",
+  "homepage": "https://ttntm.me",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^2.1.2",
+    "tailwindcss": "^1.0.5"
+  }
+}
