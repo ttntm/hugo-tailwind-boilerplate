@@ -5,7 +5,21 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     purgecss = require('gulp-purgecss');
 
-gulp.task('procss', function () {
+gulp.task('dev-css', function () {
+    return gulp.src('./src/css/page.css')
+      .pipe(postcss([
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ]))
+      .pipe(concatCss('page.css'))
+      .pipe(cssnano({
+        reduceIdents: false,
+        discardComments: {removeAll: true}
+      }))
+      .pipe(gulp.dest('./static/css/'))
+});
+
+gulp.task('build-css', function () {
     return gulp.src('./src/css/page.css')
       .pipe(postcss([
         require('tailwindcss'),
@@ -29,6 +43,6 @@ gulp.task('watchcss', function() {
   gulp.watch('./src/css/*.css', gulp.series('procss'));
 });
 
-gulp.task('dev', gulp.series('procss'));
+gulp.task('dev', gulp.series('dev-css'));
 
-gulp.task('build', gulp.series('procss'));
+gulp.task('build', gulp.series('build-css'));
