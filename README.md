@@ -28,4 +28,4 @@ In order to work with this repository, only 2 things are required:
 
 If that's set up, then all you need is to get the repository, run `npm install` and then `npm run start`. Go to `localhost:1313` and you should see a one-page demo site you can start working with in your browser.
 
-PS: the CSS in `./static/css` has been purged, so you may want to run `gulp dev-css` in order to make all of Tailwind available for your project and/or customize it through `tailwind.config.js` (see {{< link-ext "their docs" "tailwindcss.com/docs/configuration" >}} for details).
+PS: the CSS in `./static/css` has been purged, so you may want to run `gulp dev-css` in order to make all of Tailwind available for your project and/or customize it through `tailwind.config.js` (see [their docs](https://tailwindcss.com/docs/configuration) for details).
