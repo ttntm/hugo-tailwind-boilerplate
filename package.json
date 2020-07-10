@@ -12,9 +12,8 @@
     "url": "git+https://github.com/ttntm/hugo-tailwind-boilerplate.git"
   },
   "author": "ttntm",
-  "homepage": "https://ttntm.me",
-  "dependencies": {},
-  "devDependencies": {
+  "homepage": "https://hug-tailwind.netlify.app",
+  "dependencies": {
     "autoprefixer": "^9.1.5",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
@@ -23,5 +22,6 @@
     "gulp-postcss": "^8.0.0",
     "gulp-purgecss": "^2.1.2",
     "tailwindcss": "^1.0.5"
-  }
+  },
+  "devDependencies": {}
 }
