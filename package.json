@@ -12,7 +12,7 @@
     "url": "git+https://github.com/ttntm/hugo-tailwind-boilerplate.git"
   },
   "author": "ttntm",
-  "homepage": "https://hug-tailwind.netlify.app",
+  "homepage": "https://hugo-tailwind.netlify.app",
   "dependencies": {
     "autoprefixer": "^9.1.5",
     "gulp": "^4.0.2",
