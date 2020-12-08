@@ -1,9 +1,7 @@
 var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     concatCss = require('gulp-concat-css'),
-    cssnano = require('gulp-cssnano'),
-    concat = require('gulp-concat'),
-    purgecss = require('gulp-purgecss');
+    cssnano = require('gulp-cssnano');
 
 gulp.task('dev-css', function () {
     return gulp.src('./src/css/page.css')
@@ -25,12 +23,6 @@ gulp.task('build-css', function () {
         require('tailwindcss'),
         require('autoprefixer'),
       ]))
-      .pipe(purgecss({
-        content: ['./layouts/**/*.html','./content/**/*.md'],
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-        whitelist: [':focus', 'button', 'button:focus'],
-        // whitelistPatterns: [/(:\w+)/g]
-      }))
       .pipe(concatCss('page.css'))
       .pipe(cssnano({
         reduceIdents: false,
@@ -39,8 +31,8 @@ gulp.task('build-css', function () {
       .pipe(gulp.dest('./static/css/'))
 });
 
-gulp.task('watchcss', function() {
-  gulp.watch('./src/css/*.css', gulp.series('procss'));
+gulp.task('watch-css', function() {
+  gulp.watch('./src/css/*.css', gulp.series('dev-css'));
 });
 
 gulp.task('dev', gulp.series('dev-css'));

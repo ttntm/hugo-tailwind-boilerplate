@@ -1,9 +1,9 @@
 [build]
-publish = "public"
-command = "npm run deploy"
+  publish = "public"
+  command = "npm run deploy"
 
 [context.production.environment]
-HUGO_VERSION = "0.58.0"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "false"
-command = "npm run deploy"
+  HUGO_VERSION = "0.58.1"
+  HUGO_ENABLEGITINFO = "false"
+  NODE_ENV = "production"
+  command = "npm run deploy"
